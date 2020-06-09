@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<config>
+    <!--We declare the new Option Menu-->
+    <menu>
+        <!-- Will be a child of the System option in the menu, you can use Sales, Catalog, Newsletter, etc -->
+        <system>
+            <children>
+                <!-- This is our module identifier -->
+                <inexport>
+                    <title>Ingenico Export Data</title>
+                    <sort_order>400</sort_order>
+                    <!--The action composed by frontname/controller/action-->
+                    <action>inexport/adminhtml_export/index</action>
+                </inexport>
+            </children>
+        </system>
+    </menu>
+
+    <!--Declares Access Controll List for the module-->
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <!-- This is for the System option of the Backend Menu -->
+                    <system translate="title" module="Ingenico_Export">
+                        <title>Ingenico Export Data</title>
+                        <sort_order>60</sort_order>
+                        <children>
+                            <!-- This is the module identifier we used above-->
+                            <inexport>
+                                <title>Ingenico Export Data</title>
+                            </inexport>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

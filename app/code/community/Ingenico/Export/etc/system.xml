@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<config>
+<sections>
+    <payment_services translate="label" module="payment">
+        <label>Payment Services</label>
+        <tab>sales</tab>
+        <frontend_type>text</frontend_type>
+        <sort_order>450</sort_order>
+        <show_in_default>1</show_in_default>
+        <show_in_website>1</show_in_website>
+        <show_in_store>1</show_in_store>
+        <groups>
+            <inexport translate="label">
+                <label>Ingenico ePayments (Ogone) Data Export</label>
+                <comment>Please make sure to remember the password. You will need it to use in order of execution the import of generated file in Magento 2.</comment>
+                <frontend_type>text</frontend_type>
+                <sort_order>2</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>1</show_in_website>
+                <show_in_store>0</show_in_store>
+                <fields>
+                    <encryptionkey>
+                        <label>Encryption Key</label>
+                        <comment>Please save the extension settings before exporting.</comment>
+                        <frontend_type>password</frontend_type>
+                        <sort_order>10</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>1</show_in_store>
+                    </encryptionkey>
+                    <export_conf translate="label">
+                        <label>Export configuration</label>
+                        <frontend_type>select</frontend_type>
+                        <source_model>adminhtml/system_config_source_yesno</source_model>
+                        <sort_order>20</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>1</show_in_store>
+                    </export_conf>
+                    <export_aliases translate="label">
+                        <label>Export aliases</label>
+                        <comment>Please save the extension settings before exporting.</comment>
+                        <frontend_type>select</frontend_type>
+                        <source_model>adminhtml/system_config_source_yesno</source_model>
+                        <sort_order>30</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>1</show_in_store>
+                    </export_aliases>
+                    <export translate="label">
+                        <label>Export Data</label>
+                        <comment>Please save the extension settings before exporting.</comment>
+                        <frontend_type>button</frontend_type>
+                        <frontend_model>inexport/adminhtml_system_config_form_field_button</frontend_model>
+                        <sort_order>40</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>1</show_in_store>
+                    </export>
+                </fields>
+            </inexport>
+        </groups>
+    </payment_services>
+</sections>
+</config>

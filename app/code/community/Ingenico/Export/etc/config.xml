@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Ingenico_Export>
+            <version>0.0.1</version>
+        </Ingenico_Export>
+    </modules>
+
+    <global>
+        <models>
+            <inexport>
+                <class>Ingenico_Export_Model</class>
+            </inexport>
+        </models>
+
+        <blocks>
+            <inexport>
+                <class>Ingenico_Export_Block</class>
+            </inexport>
+        </blocks>
+
+        <helpers>
+            <inexport>
+                <class>Ingenico_Export_Helper</class>
+            </inexport>
+        </helpers>
+
+        <resources>
+            <inexport_setup>
+                <setup>
+                    <module>Ingenico_Export</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </inexport_setup>
+            <inexport_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </inexport_write>
+            <inexport_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </inexport_read>
+        </resources>
+    </global>
+
+    <admin>
+        <routers>
+            <inexport>
+                <use>admin</use>
+                <args>
+                    <module>Ingenico_Export</module>
+                    <frontName>inexport</frontName>
+                </args>
+            </inexport>
+        </routers>
+    </admin>
+
+    <!-- declare default configuration values for this module -->
+    <default>
+        <payment_services>
+            <inexport>
+                <active>1</active>
+                <export_conf>1</export_conf>
+                <export_aliases>1</export_aliases>
+                <encryptionkey>password</encryptionkey>
+            </inexport>
+        </payment_services>
+    </default>
+</config>
